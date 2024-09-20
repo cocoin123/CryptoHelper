@@ -10,7 +10,6 @@ class CryptoHelper():
             self.network = Networks.MAIN_NET
         elif network == "TEST":
             self.network = Networks.TEST_NET
-        sys.path.append("C:\Users\NoFi\Desktop\json\python_help.py")
 
     async def check_balance(self):
         """
