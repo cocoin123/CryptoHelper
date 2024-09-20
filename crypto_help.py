@@ -1,5 +1,4 @@
 from aiocryptopay import AioCryptoPay, Networks
-import sys
 
 class CryptoHelper():
     def __init__(self, token, network):
