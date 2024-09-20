@@ -49,37 +49,37 @@ class CryptoHelper():
         finally:
             await crypto.close()
         
-        async def create_check(
-                self, 
-                asset: str = 'USDT', 
-                amount: float = None,
-                description: str = None,
-                hidden_message: str = None,
-                paid_btn_name: str = None,
-                paid_btn_url: str = None,
-        ):
-            """
-            Создание чека.
+    async def create_check(
+            self, 
+            asset: str = 'USDT', 
+            amount: float = None,
+            description: str = None,
+            hidden_message: str = None,
+            paid_btn_name: str = None,
+            paid_btn_url: str = None,
+    ):
+        """
+        Создание чека.
 
-            asset: Криптовалюта для создание чека. По умолчанию USDT.\n
-            amount: Сумма чека. По умолчанию None.\n
-            description: Описание чека. По умолчанию None.\n
-            hidden_message: Скрытое сообщение. По умолчанию None.
-            """
-            try:
-                crypto = AioCryptoPay(self.token, self.network) # Instantiate directly
+        asset: Криптовалюта для создание чека. По умолчанию USDT.\n
+        amount: Сумма чека. По умолчанию None.\n
+        description: Описание чека. По умолчанию None.\n
+        hidden_message: Скрытое сообщение. По умолчанию None.
+        """
+        try:
+            crypto = AioCryptoPay(self.token, self.network) # Instantiate directly
 
-                check = await crypto.create_check(
-                    asset=asset,
-                    amount=amount,
-                    description=description,
-                    hidden_message=hidden_message,
-                    paid_btn_name=paid_btn_name,
-                    paid_btn_url=paid_btn_url
-                )
-                return check.bot_invoice_url
-            finally:
-                await crypto.close()
+            check = await crypto.create_check(
+                asset=asset,
+                amount=amount,
+                description=description,
+                hidden_message=hidden_message,
+                paid_btn_name=paid_btn_name,
+                paid_btn_url=paid_btn_url
+            )
+            return check.bot_invoice_url
+        finally:
+            await crypto.close()
     async def delete_check(
             self,
             check_id: int
