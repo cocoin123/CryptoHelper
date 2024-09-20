@@ -31,13 +31,13 @@ class CryptoHelper():
             currency_type: str = 'crypto'
     ): 
         """
-        Перевод средств с одного пользователя на другого.
+        Перевод средств с одного пользователя на другого.\n
 
-        Строка user_id: user_id человека которому хотите перевести деньги.
-        Строка amount: сколько вы хотите перевести.
-        Строка asset: валюта перевода. По умолчанию USDT.
-        Строка fiat: сам хз).
-        Строка currency_type: 'crypto' или 'fiat' .
+        Строка user_id: user_id человека которому хотите перевести деньги.\n
+        Строка amount: сколько вы хотите перевести.\n
+        Строка asset: валюта перевода. По умолчанию USDT.\n
+        Строка fiat: сам хз).\n
+        Строка currency_type: 'crypto' или 'fiat'.
         """
         try:
             crypto = AioCryptoPay(self.token, self.network) # Instantiate directly
@@ -63,9 +63,9 @@ class CryptoHelper():
             """
             Создание чека.
 
-            asset: Криптовалюта для создание чека. По умолчанию USDT.
-            amount: Сумма чека. По умолчанию None.
-            description: Описание чека. По умолчанию None.
+            asset: Криптовалюта для создание чека. По умолчанию USDT.\n
+            amount: Сумма чека. По умолчанию None.\n
+            description: Описание чека. По умолчанию None.\n
             hidden_message: Скрытое сообщение. По умолчанию None.
             """
             try:
@@ -125,11 +125,11 @@ class CryptoHelper():
             description: str = None,
     ):
         """
-        Созданиче счета
+        Созданиче счета\n
 
-        amount: сумма счета.
-        asset: валюта счета. По умолчанию USDT.
-        description: описание счета. По умолчанию None.
+        amount: сумма счета.\n
+        asset: валюта счета. По умолчанию USDT.\n
+        description: описание счета. По умолчанию None.\n
         """
         try:
             crypto = AioCryptoPay(self.token, self.network) # Instantiate directly
@@ -147,7 +147,7 @@ class CryptoHelper():
             invoice_id: int
     ):
         """
-        Узнать статус счета.
+        Узнать статус счета.\n
 
         invoice_id: можно узнать через метод get_invoices().
         """
