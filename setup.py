@@ -2,9 +2,9 @@ from setuptools import setup, find_packages
 
 setup(
     name='cryptohelper',
-    version='0.2',
+    version='0.3',
     packages=find_packages(),
-    description='Данный хелпер облегчит вам жизнь для использования AioCryptoPay',
+    description='Данный хелпер облегчит вам жизнь',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
     author='cocoin',
@@ -16,4 +16,5 @@ setup(
         'Operating System :: OS Independent',
     ],
     python_requires='>=3.10',
+    install_requires=['requests', 'json', 'aiocryptopay']
 )
